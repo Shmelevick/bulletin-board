@@ -16,7 +16,7 @@ def index(request):
 
 def rubric_bbs(request, rubric_id):
     bbs = Bb.objects.filter(rubric=rubric_id)
-    rubrics = Rubric.objects.all()
+    rubrics = Rubric.obects.all()
     current_rubric = Rubric.objects.get(pk=rubric_id)
     context = {'bbs': bbs, 'rubrics': rubrics, 'current_rubric': current_rubric}
     return render(request, 'bboard/rubric_bbs.html', context)
